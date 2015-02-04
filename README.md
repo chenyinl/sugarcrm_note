@@ -16,3 +16,8 @@ command out 'id' on Var $badFields = array () on line 93 in /modules/EmailTempla
 
 To change the fields of Leads (or accounts...) in the Target List's View:
 Create empty script modules/ProspectLists/metadata/studio.php and go to Admin -> Studio -> Target Lists.
+
+If the imap_open lib is not available, the edit view page for Inbound email will be disable.
+To enable it, command out "$xtpl->assign('IE_DISABLED', 'DISABLED');" on line 229 at /modules/InboundEmail/EditView.php
+
+To enable POP3, add "$sugar_config['allow_pop_inbound'] = true;" on /config_override.php.
